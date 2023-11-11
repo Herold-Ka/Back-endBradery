@@ -9,7 +9,7 @@ router.post("/buyProduct/:nameProduct/:purchasedQuantity/:price", (req, res) => 
     const price = req.params.price;
     
 
-    db.productBuy.create(
+    db.productsBuy.create(
         {
             name: nameProduct,
             quantity: purchasedQuantity,

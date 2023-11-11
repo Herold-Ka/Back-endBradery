@@ -4,8 +4,8 @@ dotenv.config();
 
 const db = {};
 
-const dbinfo = new Sequelize("BackEndBradery","root", "exemple", {
-        host: "localhost",
+const dbinfo = new Sequelize("backendbradery","root","exemple", {
+        host: "db",
         dialect: "mysql",
         port: 3306,
         pool: {
@@ -24,7 +24,7 @@ dbinfo.authenticate()
     });
 
 db.products = require("../models/Products")(dbinfo, Sequelize);
-db.productBuy = require("../models/ProductBuy")(dbinfo, Sequelize)
+db.productsBuy = require("../models/ProductsBuy")(dbinfo, Sequelize)
 
 //dbinfo.sync({ force: true });
 

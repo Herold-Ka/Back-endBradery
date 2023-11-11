@@ -14,7 +14,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}));
 
 app.use("/products", require("./router/products"));
-//app.use("/prodcutBuy", require("./router/productBuy"));
+app.use("/prodcutsBuy", require("./router/productsBuy"));
 
 app.listen(port, () => {
     console.log(`App listening on port http://${hostname}:${port}`);
