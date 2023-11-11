@@ -4,15 +4,15 @@ const db = require("../db/db");
 const Sequelize = require('sequelize');
 
 router.get("/showProducts", (req, res) => {
-    db.product
+    db.products
         .findAll({
             attributes: {exclude: ['createdAt', 'updatedAt']}, 
             order: [
                 ["id", "DESC"]
             ],
         })
-    .then((product) => {
-            res.status(200).json({ product: product });
+    .then((products) => {
+            res.status(200).json({ products: products });
         })
         .catch((err) => {
             res.status(502).json("bad req" + err);
@@ -20,13 +20,13 @@ router.get("/showProducts", (req, res) => {
 });
 
 router.get("/showProduct/:id", (req, res) => {
-    db.product.findOne({
+    db.products.findOne({
             where: {
                 id: req.params.id,
             },
         attributes: {exclude: ['createdAt', 'updatedAt']}, 
     }).then((product) => {
-        res.status(200).json({ product: product });
+        res.status(200).json({ products: products });
     })
     .catch((err) => {
         res.json(err);
@@ -37,7 +37,7 @@ router.put("/buyProduct/:id/:inventory", (req, res) => {
     const productId = req.params.id;
     const purchasedQuantity = req.params.inventory;
 
-    db.product.update(
+    db.products.update(
         { inventory: Sequelize.literal(`inventory - ${purchasedQuantity}`) },
         { where: { id: productId }, },
         

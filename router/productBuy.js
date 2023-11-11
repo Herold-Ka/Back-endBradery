@@ -3,18 +3,18 @@ const router = express.Router();
 const db = require("../db/db");
 const Sequelize = require('sequelize');
 
-router.post("/buyProduct/:nameProduct/:purchasedQuantity/:price/:totalPurchase", (req, res) => {
+router.post("/buyProduct/:nameProduct/:purchasedQuantity/:price", (req, res) => {
     const nameProduct = req.params.nameProduct;
     const purchasedQuantity = req.params.purchasedQuantity;
     const price = req.params.price;
-    const totalPurchase = req.params.totalPurchase;
+    
 
     db.productBuy.create(
         {
             name: nameProduct,
             quantity: purchasedQuantity,
             price: price,
-            totalPrice: totalPurchase,
+            totalPrice: purchasedQuantity * price,
         }
     ).then((result) => {
         if (result[0] === 1) {
