@@ -4,10 +4,10 @@ dotenv.config();
 
 const db = {};
 
-const dbinfo = new Sequelize(process.env.NAME,process.env.ID, process.env.PASSWORD, {
-        host: process.env.HOST,
-        dialect: process.env.DIALECT,
-        port: process.env.PORT,
+const dbinfo = new Sequelize('BackEndBradery','root', 'exemple', {
+        host: 'localhost',
+        dialect: 'mysql',
+        port: 3306,
         pool: {
             max: 100,
             min: 0,
@@ -24,8 +24,9 @@ dbinfo.authenticate()
     });
 
 db.product= require("../models/Product")(dbinfo, Sequelize);
+db.productBuy = require("../models/ProductBuy")(dbinfo, Sequelize)
 
-
+//dbinfo.sync({ force: true });
 
 db.dbinfo = dbinfo;
 db.Sequelize = Sequelize;
