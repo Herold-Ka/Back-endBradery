@@ -4,10 +4,10 @@ dotenv.config();
 
 const db = {};
 
-const dbinfo = new Sequelize("backendbradery","root","exemple", {
-        host: "db" || "localhost",
-        dialect: "mysql",
-        port: 3306,
+const dbinfo = new Sequelize(process.env.NAME,process.env.ID, process.env.PASSWORD, {
+        host: process.env.HOST || process.env.HOSTLOCAL,
+        dialect: process.env.DIALECT,
+        port: process.env.PORT,
         pool: {
             max: 100,
             min: 0,
