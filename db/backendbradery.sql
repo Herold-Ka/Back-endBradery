@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 11 nov. 2023 à 23:51
+-- Généré le : dim. 12 nov. 2023 à 20:02
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `backendbradery`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `productbuys`
+--
+
+DROP TABLE IF EXISTS `productbuys`;
+CREATE TABLE IF NOT EXISTS `productbuys` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `totalPrice` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `productbuys`
+--
+
+INSERT INTO `productbuys` (`id`, `name`, `quantity`, `price`, `totalPrice`) VALUES
+(1, 'test', 5, '20.00', '100.00'),
+(2, 'Short en Jean', 1, '39.99', '39.99'),
+(3, 'Pantalon Chino', 3, '54.99', '164.97'),
+(4, 'Bijoux Fantaisie', 2, '14.99', '29.98'),
+(5, 'Sandales d\'Été', 7, '49.99', '349.93'),
+(6, 'Pantalon Chino', 3, '54.99', '164.97'),
+(7, 'Bijoux Fantaisie', 2, '14.99', '29.98'),
+(8, 'Short en Jean', 1, '39.99', '39.99'),
+(9, 'Sandales d\'Été', 7, '49.99', '349.93'),
+(10, 'Blouse Florale', 1, '39.99', '39.99'),
+(11, 'Blouse Florale', 1, '39.99', '39.99'),
+(12, 'Blouse Florale', 1, '39.99', '39.99'),
+(13, 'Blouse Florale', 1, '39.99', '39.99'),
+(14, 'Pantalon Chino', 1, '54.99', '54.99'),
+(15, 'Bijoux Fantaisie', 1, '14.99', '14.99'),
+(16, 'Bijoux Fantaisie', 1, '14.99', '14.99'),
+(17, 'Sandales d\'Été', 1, '49.99', '49.99');
 
 -- --------------------------------------------------------
 
@@ -57,27 +96,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `inventory`, `image`) VALUES
 (13, 'Lunettes de Soleil', '79.99', 50, 'Lunettes de Soleil.jpg'),
 (14, 'Chemise à Carreaux', '44.99', 55, 'Chemise à Carreaux.png'),
 (15, 'Pull-over Gris', '64.99', 11, 'Pull-over Gris.jpg'),
-(16, 'Short en Jean', '39.99', 48, 'short_en_jean.jpg'),
-(17, 'Sandales d\'Été', '49.99', 36, 'sandale_d\'été.jpg'),
-(18, 'Bijoux Fantaisie', '14.99', 80, 'bijoux_fantaisie.jpg'),
-(19, 'Pantalon Chino', '54.99', 36, 'le-chino-woman.jpg'),
-(20, 'Blouse Florale', '39.99', 33, 'blouse_florale.jpg');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `productsbuy`
---
-
-DROP TABLE IF EXISTS `productsbuy`;
-CREATE TABLE IF NOT EXISTS `productsbuy` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `totalPrice` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+(16, 'Short en Jean', '39.99', 47, 'short_en_jean.jpg'),
+(17, 'Sandales d\'Été', '49.99', 28, 'sandale_d\'été.jpg'),
+(18, 'Bijoux Fantaisie', '14.99', 76, 'bijoux_fantaisie.jpg'),
+(19, 'Pantalon Chino', '54.99', 32, 'le-chino-woman.jpg'),
+(20, 'Blouse Florale', '39.99', 29, 'blouse_florale.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,8 +13,8 @@ app.use(bodyparser.json());
 //Les informations sur la manière dont est coder le tout se trouve dans le header. Cette ligne permet de vérifier le header et accepte ou non le fichier
 app.use(bodyparser.urlencoded({extended: false}));
 
-app.use("/products", require("./router/products"));
-app.use("/prodcutsBuy", require("./router/productsBuy"));
+app.use("/product", require("./router/product"));
+app.use("/productsBuy", require("./router/productsBuy"));
 
 app.listen(port, () => {
     console.log(`App listening on port http://${hostname}:${port}`);

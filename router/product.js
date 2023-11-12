@@ -4,7 +4,7 @@ const db = require("../db/db");
 const Sequelize = require('sequelize');
 
 router.get("/showProducts", (req, res) => {
-    db.products
+    db.product
         .findAll({
             attributes: {exclude: ['createdAt', 'updatedAt']}, 
             order: [
@@ -20,13 +20,13 @@ router.get("/showProducts", (req, res) => {
 });
 
 router.get("/showProduct/:id", (req, res) => {
-    db.products.findOne({
+    db.product.findOne({
             where: {
                 id: req.params.id,
             },
         attributes: {exclude: ['createdAt', 'updatedAt']}, 
     }).then((product) => {
-        res.status(200).json({ products: products });
+        res.status(200).json({ product: product });
     })
     .catch((err) => {
         res.json(err);
@@ -37,7 +37,7 @@ router.put("/buyProduct/:id/:inventory", (req, res) => {
     const productId = req.params.id;
     const purchasedQuantity = req.params.inventory;
 
-    db.products.update(
+    db.product.update(
         { inventory: Sequelize.literal(`inventory - ${purchasedQuantity}`) },
         { where: { id: productId }, },
         

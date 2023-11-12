@@ -5,7 +5,7 @@ dotenv.config();
 const db = {};
 
 const dbinfo = new Sequelize("backendbradery","root","exemple", {
-        host: "db",
+        host: "db" || "localhost",
         dialect: "mysql",
         port: 3306,
         pool: {
@@ -23,10 +23,9 @@ dbinfo.authenticate()
         console.error("Unable to connect to the database:", err);
     });
 
-db.products = require("../models/Products")(dbinfo, Sequelize);
+db.product = require("../models/Product")(dbinfo, Sequelize);
 db.productsBuy = require("../models/ProductsBuy")(dbinfo, Sequelize)
 
-//dbinfo.sync({ force: true });
 
 db.dbinfo = dbinfo;
 db.Sequelize = Sequelize;

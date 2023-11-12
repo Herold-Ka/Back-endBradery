@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db/db");
-const Sequelize = require('sequelize');
+//const Sequelize = require('sequelize');
 
 router.post("/buyProduct/:nameProduct/:purchasedQuantity/:price", (req, res) => {
     const nameProduct = req.params.nameProduct;
     const purchasedQuantity = req.params.purchasedQuantity;
     const price = req.params.price;
     
-
     db.productsBuy.create(
         {
             name: nameProduct,
