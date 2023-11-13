@@ -4,8 +4,8 @@ dotenv.config();
 
 const db = {};
 
-const dbinfo = new Sequelize(process.env.NAME,process.env.ID, process.env.PASSWORD, {
-        host:  process.env.HOSTLOCAL,
+const dbinfo = new Sequelize(process.env.NAME,process.env.ID, process.env.PASSWORDEXAMPLE, {
+        host:  process.env.HOSTDB,
         dialect: process.env.DIALECT,
         port: process.env.PORT,
         pool: {
