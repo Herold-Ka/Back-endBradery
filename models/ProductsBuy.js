@@ -1,6 +1,6 @@
 module.exports = (dbinfo, Sequelize) => {
     return dbinfo.define(
-        'ProductBuy',{  
+        'productbuys',{  
             id: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,

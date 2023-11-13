@@ -41,24 +41,6 @@ CREATE TABLE IF NOT EXISTS `productbuys` (
 -- Déchargement des données de la table `productbuys`
 --
 
-INSERT INTO `productbuys` (`id`, `name`, `quantity`, `price`, `totalPrice`) VALUES
-(1, 'test', 5, '20.00', '100.00'),
-(2, 'Short en Jean', 1, '39.99', '39.99'),
-(3, 'Pantalon Chino', 3, '54.99', '164.97'),
-(4, 'Bijoux Fantaisie', 2, '14.99', '29.98'),
-(5, `Sandales d'Été`, 7, '49.99', '349.93'),
-(6, 'Pantalon Chino', 3, '54.99', '164.97'),
-(7, 'Bijoux Fantaisie', 2, '14.99', '29.98'),
-(8, 'Short en Jean', 1, '39.99', '39.99'),
-(9, `Sandales d'Été`, 7, '49.99', '349.93'),
-(10, 'Blouse Florale', 1, '39.99', '39.99'),
-(11, 'Blouse Florale', 1, '39.99', '39.99'),
-(12, 'Blouse Florale', 1, '39.99', '39.99'),
-(13, 'Blouse Florale', 1, '39.99', '39.99'),
-(14, 'Pantalon Chino', 1, '54.99', '54.99'),
-(15, 'Bijoux Fantaisie', 1, '14.99', '14.99'),
-(16, 'Bijoux Fantaisie', 1, '14.99', '14.99'),
-(17, `Sandales d'Été`, 1, '49.99', '49.99');
 
 -- --------------------------------------------------------
 
